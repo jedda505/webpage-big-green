@@ -1,0 +1,26 @@
+<html lang="en">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. Profile Picture -->
+
+    <img 
+    class="profile-picture"
+    src = "/static/img/logo.png"/>
+
+    <!-- 2. Profile name -->
+    <div class="profile-name">@thebiggreeeen</div>
+
+    <!-- 3. Body -->
+
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>

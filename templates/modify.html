@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <form class="link_edits" action="/modify/{{links.id}}" method="POST">
+        <label for="label"> Label: </label>
+        <input type="text" name="label" id="label" value="{{links.label}}">
+        <label for="url"> URL: </label>
+        <input type="text" name="url" id="url" value="{{links.url}}">
+        <label for="schedule_datetime"> Schedule Date: </label>
+        <input type="datetime-local" name="schedule_datetime" id="schedule_datetime" value={{links.schedule_datetime}}>
+        <input type="submit" value="Modify link">
+    </form>
+
+{% endblock %}
+
+

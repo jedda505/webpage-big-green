@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<table class="link_edits">
+    <tr>
+        <th>Label</th>
+        <th>Link</th>
+        <th>Added</th>
+        <th>Scheduled</th>
+    </tr> 
+    {% for link in links %}
+        <tr>
+            <td>{{ link.label }}</td>
+            <td>
+                <a href="{{ link.url }}"> {{ link.url }}</a>
+            </td> 
+            <td> {{ link.date_created }} </td>
+
+            <td> {{ link.schedule_datetime }}</td>
+
+            <td>
+                <a href="/delete/{{ link.id }}">Delete</a>
+                <br>
+                <a href="/modify//{{ link.id }}">Modify</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+    <form class="link_edits" action="/admin" method="POST">         
+        <label for="label"> Label: </label>
+        <input type="text" name="label" id="label">
+        <label for="url"> URL: </label>
+        <input type="text" name="url" id="url">
+        <label for="schedule">Schedule:</label>
+        <input type="datetime-local" id="schedule_datetime" name="schedule_datetime"> 
+        <input type="submit" value="Add link">
+    </form>
+
+{% endblock %}
+
+

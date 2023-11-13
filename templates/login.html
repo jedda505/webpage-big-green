@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div> Hello Login Page! </div>
+
+    <form action="/admin" method="POST">         
+        <label for="label"> Username: </label>
+        <input type="text" name="label" id="label">
+        <label for="schedule">Password:</label>
+        <input type="password" id="schedule_datetime" name="schedule_datetime"> 
+        <input type="submit" value="Login">
+    </form>
+
+{% endblock %}
+
